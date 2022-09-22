@@ -39,13 +39,13 @@ namespace forestBuilder {
         blocks.fill(
             DIRT,
             posCamera(-size / 2, 0, 5),
-            posCamera(size / 2, size, 5 + size),
+            posCamera(size / 2, 0.1, 5 + size),
             FillOperation.Replace
         )
         blocks.fill(
             tree,
-            posCamera(-size / 2 + 1, 1, 6),
-            posCamera(size / 2 - 1, size - 1, 4 + size),
+            posCamera(-size / 2 + 1, 0.1, 6),
+            posCamera(size / 2 - 1, 0.2, 4 + size),
             FillOperation.Replace
         )
     }
