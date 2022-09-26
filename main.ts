@@ -1,40 +1,30 @@
-//% emitAsConstant
 enum Tree {
     //% blockIdentity="blocks.tree" enumval=6 block="OakSapling"
-    //% jres alias=OAK_SAPLING
-    OakSapling = 6,
+    //% jres="Block.OakSapling" alias=OAK_SAPLING
+    OakSapling = Block.OakSapling,
     //% blockIdentity="blocks.tree" enumval=65542 block="SpruceSapling"
-    //% jres alias=SPRUCE_SAPLING
-    SpruceSapling = 65542,
+    //% jres="Block.SpruceSapling" alias=SPRUCE_SAPLING
+    SpruceSapling = Block.SpruceSapling,
     //% blockIdentity="blocks.tree" enumval=131078 block="BirchSapling"
-    //% jres alias=BIRCH_SAPLING
-    BirchSapling = 131078,
+    //% jres="Block.BirchSapling" alias=BIRCH_SAPLING
+    BirchSapling = Block.BirchSapling,
     //% blockIdentity="blocks.tree" enumval=196614 block="JungleSapling"
-    //% jres alias=JUNGLE_SAPLING
-    JungleSapling = 196614,
+    //% jres="Block.JungleSapling" alias=JUNGLE_SAPLING
+    JungleSapling = Block.JungleSapling,
     //% blockIdentity="blocks.tree" enumval=262150 block="AcaciaSapling"
-    //% jres alias=ACACIA_SAPLING
-    AcaciaSapling = 262150,
+    //% jres="Block.AcaciaSapling" alias=ACACIA_SAPLING
+    AcaciaSapling = Block.AcaciaSapling,
     //% blockIdentity="blocks.tree" enumval=327686 block="DarkOakSapling"
-    //% jres alias=DARK_OAK_SAPLING
-    DarkOakSapling = 327686
+    //% jres="Block.DarkOakSapling" alias=DARK_OAK_SAPLING
+    DarkOakSapling = Block.DarkOakSapling
 }
-
-
-/**
- * Functions are mapped to blocks using various macros
- * in comments starting with %. The most important macro
- * is "block", and it specifies that a block should be
- * generated for an **exported** function.
- */
-
-//% color="#AA278D" icon="\uf1bb" weight=100
 namespace forestBuilder {
     /**
      * @param size
      * @param tree
      */
-    //% blockId=minecraftForest block="forest with %size| of %tree=minecraftTree"
+    //% blockId=minecraftForest block="forest with %size| of %tree"
+    //% tree.shadow=minecraftTree
     export function forest(size: number, tree: number) {
         blocks.fill(
             DIRT,
@@ -60,7 +50,8 @@ namespace forestBuilder {
             case Tree.BirchSapling: return Block.BirchSapling;
             case Tree.JungleSapling: return Block.JungleSapling;
             case Tree.AcaciaSapling: return Block.AcaciaSapling;
-            case Tree.DarkOakSapling: return Block.DarkOakSapling
+            case Tree.DarkOakSapling: return Block.DarkOakSapling;
+            default: return Block.OakSapling
         }
     }
 }
