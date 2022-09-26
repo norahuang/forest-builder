@@ -18,6 +18,8 @@ enum Tree {
     //% jres="Block.DarkOakSapling" alias=DARK_OAK_SAPLING
     DarkOakSapling = Block.DarkOakSapling
 }
+
+//% color="#AA278D" icon="\uf1bb" weight=10
 namespace forestBuilder {
     /**
      * @param size
